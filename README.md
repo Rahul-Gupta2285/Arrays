@@ -1,4 +1,5 @@
 # Arrays
-Fundamentals of arrays and some questions.
+
+Fundamentals of arrays and some classical questions.
 <br>
 Author : Rahul Gupta

@@ -9,7 +9,7 @@ public class search_rotated_sorted_array {
             mid = (low + high) / 2;
             if (numbers[mid] == item) {
                 return mid;
-            } else if (numbers[low] < numbers[mid]) {
+            } else if (numbers[low] <= numbers[mid]) {
                 if (item >= numbers[low] && item < numbers[mid]) {
                     high = mid - 1;
                 } else {
@@ -27,7 +27,7 @@ public class search_rotated_sorted_array {
     }
 
     public static void main(String[] args) {
-        int numbers[] = { 40, 50, 10, 20, 30 }, item = 50, foundedIndex;
+        int numbers[] = { 3, 1 }, item = 1, foundedIndex;
         foundedIndex = searchRotatedSortedArray(numbers, item);
         if (foundedIndex == -1) {
             System.out.println("Not found");

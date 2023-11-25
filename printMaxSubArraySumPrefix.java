@@ -1,19 +1,20 @@
 
 //time complexity of this program is O(n2) 
-
+//space complexity of this program is O(n)
 public class printMaxSubArraySumPrefix {
 
-    public static int MaxSubArraySum(int numbers[]) {
-        int sum = 0, maxSum = Integer.MIN_VALUE, prefix[] = new int[numbers.length], i, j;
+    public static int MaxSubArraySum(int arr[]) {
+        int sum = 0, maxSum = Integer.MIN_VALUE;
+        int prefix[] = new int[arr.length];
 
         // calculate prefix
-        prefix[0] = numbers[0];
-        for (i = 1; i < prefix.length; i++) {
-            prefix[i] = numbers[i] + prefix[i - 1];
+        prefix[0] = arr[0];
+        for (int i = 1; i < prefix.length; i++) {
+            prefix[i] = arr[i] + prefix[i - 1];
         }
 
-        for (i = 0; i < numbers.length; i++) {
-            for (j = i; j < numbers.length; j++) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
                 sum = 0;
                 sum += i == 0 ? prefix[j] : (prefix[j] - prefix[i - 1]);
                 maxSum = Math.max(sum, maxSum);
@@ -23,7 +24,7 @@ public class printMaxSubArraySumPrefix {
     }
 
     public static void main(String[] args) {
-        int numbers[] = { 1, 3, -2, 1 };
-        System.out.println(MaxSubArraySum(numbers));
+        int arr[] = { 1, -2, 6, -1, 3 };
+        System.out.println(MaxSubArraySum(arr));
     }
 }

@@ -2,11 +2,12 @@
 public class trappingRainwater {
 
     public static int trappedRainwater(int height[]) {
-        // calculate left max boundary - array
         int n = height.length;
         int waterlevel, trappedWater = 0;
         int leftMax[] = new int[n];
         int rightMax[] = new int[n];
+
+        // calculate left max boundary - array
         leftMax[0] = height[0];
         for (int i = 1; i < n; i++) {
             leftMax[i] = Math.max(leftMax[i - 1], height[i]);

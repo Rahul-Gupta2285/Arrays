@@ -15,7 +15,7 @@ public class buy_sell_stock2 {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 3, 5, 1, 7, 4, 9, 3 };
+        int arr[] = { 7, 1, 5, 3, 6, 4 };
         System.out.println(buySellStock(arr));
     }
 }

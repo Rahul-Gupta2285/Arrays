@@ -3,23 +3,23 @@ public class trappingRainwater {
 
     public static int trappedRainwater(int height[]) {
         // calculate left max boundary - array
-        int arraySize = height.length, i, waterlevel, trappedWater = 0;
-        int leftMax[] = new int[arraySize];
-        int rightMax[] = new int[arraySize];
+        int size = height.length;
+        int waterlevel, trappedWater = 0;
+        int leftMax[] = new int[size];
+        int rightMax[] = new int[size];
         leftMax[0] = height[0];
-        for (i = 1; i < arraySize; i++) {
+        for (int i = 1; i < size; i++) {
             leftMax[i] = Math.max(height[i], leftMax[i - 1]);
         }
 
         // calculate right max boundary - array
-        rightMax[arraySize - 1] = height[arraySize - 1];
-        for (i = arraySize - 2; i >= 0; i--) {
+        rightMax[size - 1] = height[size - 1];
+        for (int i = size - 2; i >= 0; i--) {
             rightMax[i] = Math.max(height[i], rightMax[i + 1]);
         }
 
         // loop
-
-        for (i = 0; i < arraySize; i++) {
+        for (int i = 0; i < size; i++) {
             // waterlevel = min(leftmax boundary, rightmax boundary)
             waterlevel = Math.min(leftMax[i], rightMax[i]);
             // trappedwater = waterlevel - height[i]

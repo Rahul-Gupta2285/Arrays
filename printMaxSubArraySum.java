@@ -3,7 +3,7 @@
 // (brute force) technique hai mtlb basic technique.
 
 public class printMaxSubArraySum {
-    public static void printSubArrays(int numbers[]) {
+    public static int printSubArrays(int numbers[]) {
         System.out.println();
         int sum = 0, maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < numbers.length; i++) {
@@ -16,11 +16,11 @@ public class printMaxSubArraySum {
                 maxSum = Math.max(sum, maxSum);
             }
         }
-        System.out.println("max sub array sum : " + maxSum);
+        return maxSum;
     }
 
     public static void main(String[] args) {
-        int numbers[] = { 2, 4, 6, 8, 10 };
-        printSubArrays(numbers);
+        int numbers[] = { -1, -2, 6, -1, 3 };
+        System.out.println(printSubArrays(numbers));
     }
 }

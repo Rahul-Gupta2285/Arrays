@@ -12,7 +12,6 @@ public class printMaxSubArraySum {
                 for (int k = i; k <= j; k++) {
                     sum += numbers[k];
                 }
-                System.out.println(sum);
                 maxSum = Math.max(sum, maxSum);
             }
         }

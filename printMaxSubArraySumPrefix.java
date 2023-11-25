@@ -3,13 +3,11 @@
 
 public class printMaxSubArraySumPrefix {
 
-    public static void print_max_sub_array_sum_prefix(int numbers[]) {
-        System.out.println();
+    public static int MaxSubArraySum(int numbers[]) {
         int sum = 0, maxSum = Integer.MIN_VALUE, prefix[] = new int[numbers.length], i, j;
 
-        // creating prefix
+        // calculate prefix
         prefix[0] = numbers[0];
-
         for (i = 1; i < prefix.length; i++) {
             prefix[i] = numbers[i] + prefix[i - 1];
         }
@@ -21,11 +19,11 @@ public class printMaxSubArraySumPrefix {
                 maxSum = Math.max(sum, maxSum);
             }
         }
-        System.out.println("max sub array sum : " + maxSum);
+        return maxSum;
     }
 
     public static void main(String[] args) {
         int numbers[] = { 1, 3, -2, 1 };
-        print_max_sub_array_sum_prefix(numbers);
+        System.out.println(MaxSubArraySum(numbers));
     }
 }

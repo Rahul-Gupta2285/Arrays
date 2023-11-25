@@ -9,7 +9,7 @@ public class printMaxSubArraySumPrefix {
 
         // calculate prefix
         prefix[0] = arr[0];
-        for (int i = 1; i < prefix.length; i++) {
+        for (int i = 1; i < prefix.length; i++) { // auxilary array
             prefix[i] = arr[i] + prefix[i - 1];
         }
 

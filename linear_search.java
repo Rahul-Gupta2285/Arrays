@@ -1,4 +1,6 @@
 
+// time complexity : o(N)
+// space complexity : o(1)
 public class linear_search {
 
     public static int search(int arr[], int item) {

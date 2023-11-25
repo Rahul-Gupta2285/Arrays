@@ -1,16 +1,17 @@
 
-//prerequisite for binary search is that array should be sorted
-//time complexity of this program is O(log n) because isme n/2 operations ho rhe hai
-
+// time complexity: O(log n)
+// space complexity: O(1)
 public class binary_search {
 
-    public static int binarySearch(int numbers[], int item) {
-        int low = 0, high = numbers.length - 1, mid;
+    public static int search(int arr[], int item) {
+        int low = 0;
+        int high = arr.length - 1;
+        int mid;
         while (low <= high) {
             mid = (low + high) / 2;
-            if (numbers[mid] == item) {
+            if (arr[mid] == item) {
                 return mid;
-            } else if (numbers[mid] < item) {
+            } else if (arr[mid] < item) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
@@ -20,12 +21,8 @@ public class binary_search {
     }
 
     public static void main(String[] args) {
-        int numbers[] = { 2, 4, 6, 8, 10 }, item = 10, foundedIndex;
-        foundedIndex = binarySearch(numbers, item);
-        if (foundedIndex == -1) {
-            System.out.println("Not found");
-        } else {
-            System.out.println(item + " found at index : " + foundedIndex);
-        }
+        int arr[] = { 2, 4, 6, 8, 10 };
+        int item = 8;
+        System.out.println(search(arr, item));
     }
 }

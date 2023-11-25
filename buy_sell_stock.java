@@ -1,22 +1,25 @@
 
-// time complexity of this program is o(N2) and space complexity is o(1) which constant
+// time complexity of this program is o(N) and space complexity is o(1) 
 
 public class buy_sell_stock {
 
-    public static int buySellStock(int arr[]) {
-        int maxprofit = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                int profit = arr[j] - arr[i];
+    public static int buySellStock(int prices[]) {
+        int buyPrice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+
+        for (int i = 0; i < prices.length; i++) {
+            if (buyPrice < prices[i]) { // profit
+                int profit = prices[i] - buyPrice; // today's profit
                 maxprofit = Math.max(maxprofit, profit);
+            } else {
+                buyPrice = prices[i];
             }
-            System.out.println();
         }
         return maxprofit;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 3, 5, 1, 7, 4, 9, 3 };
-        System.out.println(buySellStock(arr));
+        int prices[] = { 7, 1, 5, 3, 6, 4 };
+        System.out.println(buySellStock(prices));
     }
 }

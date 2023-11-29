@@ -4,15 +4,15 @@
 public class buy_sell_stock {
 
     public static int buySellStock(int prices[]) {
-        int buyPrice = Integer.MAX_VALUE;
+        int buyprice = Integer.MAX_VALUE;
         int maxprofit = 0;
-
+        int profit = 0;
         for (int i = 0; i < prices.length; i++) {
-            if (buyPrice < prices[i]) { // profit
-                int profit = prices[i] - buyPrice; // today's profit
-                maxprofit = Math.max(maxprofit, profit);
+            if (buyprice < prices[i]) {
+                profit = prices[i] - buyprice;
+                maxprofit = Math.max(profit, maxprofit);
             } else {
-                buyPrice = prices[i];
+                buyprice = prices[i];
             }
         }
         return maxprofit;
